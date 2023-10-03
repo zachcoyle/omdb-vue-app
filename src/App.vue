@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 
-import HelloWorld from './components/HelloWorld.vue'
 import { search } from './api'
 
 const query = ref("")
@@ -11,22 +10,19 @@ const query = ref("")
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-        <div>
-          <input v-model="query" type="text" placeholder="Search">
-          <button v-on:click="search(query)" class="btn btn-primary">Search</button>
-        </div>
-
+      <!-- TODO: change the layout  -->
       <nav>
         <RouterLink to="/">Search</RouterLink>
         <RouterLink to="/history">History</RouterLink>
       </nav>
+      <!-- TODO: turn this into a proper form -->
+      <div>
+        <input v-model="query" type="text" placeholder="Search">
+        <button v-on:click="search(query)" class="btn btn-primary">Search</button>
+      </div>
     </div>
   </header>
-
   <RouterView />
 </template>
 
