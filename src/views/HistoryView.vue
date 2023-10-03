@@ -1,6 +1,9 @@
 <template>
   <div class="about">
     <h1>History</h1>
+    <ul>
+      <li v-for="(movie, index) in this.$store.getters.history" :key="index">{{ movie.Title }}</li>
+    </ul>
   </div>
 </template>
 
