@@ -22,7 +22,7 @@ const query = ref("")
 
       <nav>
         <RouterLink to="/">Search</RouterLink>
-        <RouterLink to="/about">History</RouterLink>
+        <RouterLink to="/history">History</RouterLink>
       </nav>
     </div>
   </header>
