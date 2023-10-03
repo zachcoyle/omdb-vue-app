@@ -1,11 +1,15 @@
+<script setup>
+const props = defineProps(['movie'])
+</script>
+
 <template>
   <!-- TODO: Styling -->
   <div>
-  <h1>{{ this.$store.getters.current.Title}}</h1>
-  <h2>({{ this.$store.getters.current.Year}})</h2>
+  <h1>{{ props.movie?.Title}}</h1>
+  <h2>({{ props.movie?.Year}})</h2>
   </div>
-  <div>Directed By: {{ this.$store.getters.current.Director}}</div>
-  <div>Featuring: {{ this.$store.getters.current.Actors}}</div>
-  <div v-if="this.$store.getters.current.MetaScore">MetaScore: {{ this.$store.getters.current.MetaScore }}</div>
-  <img v-if="this.$store.getters.current.Poster" v-bind:src="this.$store.getters.current.Poster" />
+  <div>Directed By: {{ props.movie?.Director}}</div>
+  <div>Featuring: {{ props.movie?.Actors}}</div>
+  <div v-if="props.movie?.MetaScore">MetaScore: {{ props.movie?.MetaScore }}</div>
+  <img v-if="props.movie?.Poster" v-bind:src="props.movie?.Poster" />
 </template>

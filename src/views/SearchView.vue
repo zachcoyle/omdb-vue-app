@@ -14,6 +14,6 @@ const query = ref("")
       <input v-model="query" type="text" placeholder="Search">
       <button v-on:click="search(query)" class="btn btn-primary">Search</button>
     </div>
-    <MovieDetail />
+    <MovieDetail :movie="this.$store.getters.current" />
   </main>
 </template>
