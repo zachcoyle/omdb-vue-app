@@ -1,11 +1,5 @@
 <script setup>
-import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
-
-import { search } from './api'
-
-const query = ref("")
-
 </script>
 
 <template>
@@ -16,11 +10,7 @@ const query = ref("")
         <RouterLink to="/">Search</RouterLink>
         <RouterLink to="/history">History</RouterLink>
       </nav>
-      <!-- TODO: turn this into a proper form and extract it -->
-      <div>
-        <input v-model="query" type="text" placeholder="Search">
-        <button v-on:click="search(query)" class="btn btn-primary">Search</button>
-      </div>
+
     </div>
   </header>
   <RouterView />
