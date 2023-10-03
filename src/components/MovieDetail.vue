@@ -7,6 +7,7 @@ const props = defineProps(['movie'])
   <div>
   <h1>{{ props.movie?.Title}}</h1>
   <h2>({{ props.movie?.Year}})</h2>
+  <h2>({{ props.movie?.Rated}})</h2>
   </div>
   <div>Directed By: {{ props.movie?.Director}}</div>
   <div>Featuring: {{ props.movie?.Actors}}</div>
