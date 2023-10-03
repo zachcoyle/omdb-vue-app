@@ -1,6 +1,12 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+
 import HelloWorld from './components/HelloWorld.vue'
+import { search } from './api'
+
+const query = ref("")
+
 </script>
 
 <template>
@@ -9,10 +15,14 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+        <div>
+          <input v-model="query" type="text" placeholder="Search">
+          <button v-on:click="search(query)" class="btn btn-primary">Search</button>
+        </div>
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Search</RouterLink>
+        <RouterLink to="/about">History</RouterLink>
       </nav>
     </div>
   </header>
