@@ -8,7 +8,7 @@ const query = ref("")
   <!-- TODO: turn this into a proper form -->
   <!-- TODO: Styling -->
   <div>
-  <input v-model="query" type="text" placeholder="Search">
-  <button v-on:click="search(query)" class="btn btn-primary">Search</button>
-</div>
+    <input v-model="query" type="text" placeholder="Search">
+    <button v-on:click="search(query)" class="btn btn-primary">Search</button>
+  </div>
 </template>
