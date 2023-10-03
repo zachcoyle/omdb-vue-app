@@ -1,16 +1,30 @@
 <script setup>
+import { ref} from 'vue'
+import Card from 'primevue/card'
+import Rating from 'primevue/rating';
+
 const props = defineProps(['movie'])
+const ratingValue = ref(props.movie?.imdbRating)
 </script>
 
 <template>
-  <!-- TODO: Styling -->
-  <div>
-  <h1>{{ props.movie?.Title}}</h1>
-  <h2>({{ props.movie?.Year}})</h2>
-  <h2>({{ props.movie?.Rated}})</h2>
-  </div>
-  <div>Directed By: {{ props.movie?.Director}}</div>
-  <div>Featuring: {{ props.movie?.Actors}}</div>
-  <div v-if="props.movie?.MetaScore">MetaScore: {{ props.movie?.MetaScore }}</div>
-  <img v-if="props.movie?.Poster" v-bind:src="props.movie?.Poster" />
+  <img alt="user header" :src="props.movie?.Poster" />
+  <Card style="width: 25em">
+    <template #header>
+
+    </template>
+    <template #title>{{ props.movie?.Title }} ({{ props.movie?.Year }})</template>
+    <template #subtitle> Rating: {{ props.movie?.Rated}}</template>
+    <template #content>
+        <p>
+            {{ props.movie?.Plot }}
+        </p>
+    </template>
+    <template #footer>
+      <div>Directed By: {{ props.movie?.Director}}</div>
+      <div>Featuring: {{ props.movie?.Actors}}</div>
+      <!-- TODO: fix the following lint error -->
+      <div>{{ ratingValue }}<Rating :stars="10" v-model="props.movie.imdbRating" readonly ><template #cancelicon><div /></template></Rating></div>
+    </template>
+</Card>
 </template>
