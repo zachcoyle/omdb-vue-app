@@ -1,19 +1,11 @@
 <script setup>
-import { ref } from 'vue'
-
-import { search } from '../api'
 import MovieDetail from '../components/MovieDetail.vue';
-
-const query = ref("")
+import SearchForm from '../components/SearchForm.vue';
 </script>
 
 <template>
   <main>
-    <!-- TODO: turn this into a proper form and extract it -->
-    <div>
-      <input v-model="query" type="text" placeholder="Search">
-      <button v-on:click="search(query)" class="btn btn-primary">Search</button>
-    </div>
+    <SearchForm />
     <MovieDetail :movie="this.$store.getters.current" />
   </main>
 </template>
