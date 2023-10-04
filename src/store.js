@@ -13,7 +13,7 @@ export default createStore({
   },
   getters: {
     current(state) {
-      return state.history.at(-1) ?? {}
+      return state.history.at(-1)
     },
     history(state) {
       return state.history

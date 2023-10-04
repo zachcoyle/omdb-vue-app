@@ -33,3 +33,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Expects the environment variable `VITE_API_KEY` to be set
+
+VITE_API_KEY=your_omdb_api_key

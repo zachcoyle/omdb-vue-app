@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div>
     <h1>History</h1>
     <ul v-if="this.$store.getters.history.length > 0">
       <li v-for="(movie, index) in this.$store.getters.history" :key="index">{{ movie.Title }}</li>
@@ -9,11 +9,4 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
 </style>
