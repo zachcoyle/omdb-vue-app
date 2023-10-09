@@ -21,7 +21,7 @@ const props = defineProps(['movie'])
         <div>Directed By: {{ props.movie?.Director }}</div>
         <div>Featuring: {{ props.movie?.Actors }}</div>
         <!-- TODO: fix the following lint error -->
-        <div>
+        <div class="rating">
           <Rating :stars="10" v-model="props.movie.imdbRating" readonly
             ><template #cancelicon><div /></template
           ></Rating>
@@ -42,5 +42,12 @@ const props = defineProps(['movie'])
 
 .empty {
   margin: 10px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
 }
 </style>
