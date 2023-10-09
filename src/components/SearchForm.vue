@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-import InputText from 'primevue/inputtext';
-import Button from 'primevue/button';
+import InputText from 'primevue/inputtext'
+import Button from 'primevue/button'
 import { search } from '../api'
-const query = ref("")
+const query = ref('')
 </script>
 
 <template>
