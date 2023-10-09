@@ -12,4 +12,8 @@ export const search = (query) =>
       })
   )
     .then((data) => data.json())
-    .then((json) => store.commit('append', json))
+    .then((json) => {
+      if (!(json.Response === 'False')) {
+        store.commit('append', json)
+      }
+    })
