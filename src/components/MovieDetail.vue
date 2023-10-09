@@ -22,6 +22,8 @@ const props = defineProps(['movie'])
         <div>Featuring: {{ props.movie?.Actors }}</div>
         <!-- TODO: fix the following lint error -->
         <div class="rating">
+          <!-- it's set to readonly, so I'm ok with disabling this warning here -->
+          <!-- eslint-disable-next-line vue/no-mutating-props -->
           <Rating :stars="10" v-model="props.movie.imdbRating" readonly
             ><template #cancelicon><div /></template
           ></Rating>

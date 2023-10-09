@@ -1,11 +1,12 @@
+<script setup>
+import HistoryList from '../components/HistoryList.vue'
+</script>
+
 <template>
   <div>
-    <h1>History</h1>
-    <ul v-if="this.$store.getters.history.length > 0">
-      <li v-for="(movie, index) in this.$store.getters.history" :key="index">{{ movie.Title }}</li>
-    </ul>
-    <h2 v-else>No search history</h2>
+    <HistoryList
+      :title="this.$store.getters.history.length > 0 ? 'History' : 'No Search History'"
+      :items="this.$store.getters.history"
+    />
   </div>
 </template>
-
-<style></style>

@@ -1,4 +1,3 @@
-import './assets/main.css'
 import 'primevue/resources/themes/lara-light-indigo/theme.css'
 import 'primeicons/primeicons.css'
 
